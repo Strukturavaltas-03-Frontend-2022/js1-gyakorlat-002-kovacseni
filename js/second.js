@@ -15,3 +15,18 @@ hogy a tömb minden eleme number típusú-e vagy sem
 - `someElementsAreNumbers`: Értéke true/false attól függően, 
 hogy a tömbben van-e number típusú elem vagy sem
 */
+
+'use strict';
+
+const checker = (array, primitive) => { 
+    const isPrimitiveInArray = () => array.includes(primitive);
+    const indexOfPrimitiveInArray = () => array.findIndex(item => item === primitive);
+    const areAllNumbers = () => array.every(item => typeof item === 'number');
+    const areSomeNumbers = () => array.some(item => typeof item === 'number');
+
+    return {
+    exists: isPrimitiveInArray(),
+    index: indexOfPrimitiveInArray(),
+    allElementsAreNumbers: areAllNumbers(),
+    someElementsAreNumbers: areSomeNumbers()
+}};
